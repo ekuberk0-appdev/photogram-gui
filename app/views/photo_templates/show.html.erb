@@ -3,22 +3,22 @@
 <dl>
   <dt>Image</dt>
   <dd>
-    <img src="https://robohash.org/dolorehicincidunt.png?size=300x300&amp;set=set1">
+    <img src="<%= @the_photo.image %>">
   </dd>
 
   <dt>Caption</dt>
   <dd>
-    <p>Once you’ve accepted your flaws, no one can use them against you.</p>
+    <p><%= @the_photo.caption %></p>
   </dd>
 
   <dt>Owner</dt>
   <dd>
-    catherina
+    <%= @the_photo.poster.username %>
   </dd>
 
   <dt>Posted</dt>
   <dd>
-    2019-04-27 11:56:39 UTC
+    <%= @the_photo.created_at %>
   </dd>
 
   <dt>Edit photo</dt>
@@ -36,7 +36,7 @@
 
   <dt>Delete photo</dt>
   <dd>
-    <a href="/delete_photo/777;">
+    <a href="/delete_photo/<%= @the_photo.id %>">
       Delete this photo
     </a>
   </dd>
