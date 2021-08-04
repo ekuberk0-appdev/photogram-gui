@@ -67,4 +67,15 @@ redirect_to("/photos/" + the_photo.id.to_s)
 end 
 
 
+def comment
+browser_photo_id = params.fetch("input_photo_id")
+browser_author_id = params.fetch("input_author_id")
+browser_comment = params.fetch("input_body")
+
+new_comment = browser_comment
+new_comment.save
+
+render({ :template => "photo_templates/comment.html.erb"})
+end 
+
 end 
