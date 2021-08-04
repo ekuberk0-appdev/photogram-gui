@@ -23,4 +23,26 @@ matching_usernames = User.where({ :username => url_username })
   render({ :template => "user_templates/show.html.erb" })
 end 
 
+def create
+insert_user_record = params.fetch("input_username")
+
+a_new_user = User.new
+a_new_user.username = insert_user_record
+a_new_user.save
+
+redirect_to("/users/" + a_new_user.username.to_s)
+  #render({ :template => "user_templates/create.html.erb"})
+end 
+
+def update 
+
+update_user = params.fetch("input_username")
+the_updated_user = User.new
+the_updated_user.username = update_user
+the_updated_user.save
+
+redirect_to("/users/" + the_updated_user.username.to_s)
+  #render({ :template => "user_templates/update.html.erb"})
+end 
+
 end 
